@@ -19,5 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResources([
-    'project' => 'ProjectController',
+    'projects' => 'ProjectController',
+    'folders' => 'FolderController',
 ]);
