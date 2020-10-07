@@ -8,6 +8,11 @@ class Project extends Model
 {
     public function tasks()
     {
-        return $this->hasMany(Tasks::class)->orderBy('order');
+        return $this->hasMany(Task::class)->orderBy('order');
+    }
+
+    public function overdueTasks()
+    {
+        return $this->hasMany(Task::class)->whereDate('deadline', '<', date("Y-m-d"));
     }
 }

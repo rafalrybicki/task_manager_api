@@ -9,7 +9,7 @@ class FolderController extends Controller
 {
     public function index()
     {
-        return response(Folder::all());
+        return response(Folder::with('projects')->get());
     }
 
     public function store(Request $request)

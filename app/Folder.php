@@ -9,6 +9,6 @@ class Folder extends Model
 {
     public function projects()
     {
-        return $this->hasMany(Project::class)->orderBy('order');
+        return $this->hasMany(Project::class)->withCount(['tasks', 'overdueTasks'])->orderBy('order');
     }
 }

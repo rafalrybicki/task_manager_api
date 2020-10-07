@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->string('name', 30);
             $table->string('color', 30);
             $table->integer('order');
-            $table->foreignId('folder_id')->nullable()->constrained();
+            $table->foreignId('folder_id')->default(1)->constrained();
             $table->timestamps();
         });
     }
