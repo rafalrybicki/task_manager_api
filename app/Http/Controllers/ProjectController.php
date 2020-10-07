@@ -8,16 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 class ProjectController extends Controller
 {
-    public function index()
-    {
-        // return response(Project::all());
-        // return response(Project::withCount(['tasks', 'overdueTasks'])->groupBy('folder')->get());
-    }
-
     public function show(Request $request)
     {
         $id = $request->project;
-        return response(Project::withCount(['tasks', 'overdueTasks'])->find($id));
+        return response(Project::with('tasks')->find($id));
     }
 
     public function store(Request $request)
