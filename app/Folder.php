@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Project;
 use Illuminate\Database\Eloquent\Model;
 
 class Folder extends Model
