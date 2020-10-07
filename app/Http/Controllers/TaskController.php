@@ -14,13 +14,13 @@ class TaskController extends Controller
 
     public function store(Request $request)
     {
-        //
     }
 
 
-    public function show(Task $task)
+    public function show(Request $request)
     {
-        //
+        $id = $request->task;
+        return response(Task::with('subtasks')->find($id));
     }
 
     public function update(Request $request, Task $task)
